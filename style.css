@@ -1,9 +1,10 @@
 html{
     font-family: 'Microsoft JhengHei', Helvetica, Arial, sans-serif;
-
+    font-size: large;
 }
 p{
-    line-height: 24px;
+    line-height: 30px;
+    font-size: 24px;
 }
 img{
     display: block;
@@ -39,4 +40,8 @@ code{
 }
 .game{
     background-color: #8854d0;
+}
+
+@media screen and (max-width: 300px) {
+    
 }
