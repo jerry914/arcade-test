@@ -2,7 +2,9 @@ html{
     font-family: 'Microsoft JhengHei', Helvetica, Arial, sans-serif;
 
 }
-
+p{
+    line-height: 24px;
+}
 img{
     display: block;
     margin-left: auto;
@@ -23,4 +25,18 @@ img{
 
 li{
     line-height: 25px;
+}
+
+code{
+    font-family: monospace,'Share Tech Mono';
+    padding: .05rem .2rem;
+    border-radius: .2rem;
+    color: white;
+    white-space: nowrap;
+}
+.loops{
+    background-color: #20BF6B;
+}
+.game{
+    background-color: #8854d0;
 }
