@@ -1,5 +1,6 @@
 html{
     font-family: 'Microsoft JhengHei', Helvetica, Arial, sans-serif;
+
 }
 
 img{
@@ -11,6 +12,7 @@ img{
     background-color: #fff;
     max-width: 1280px;
     margin: auto;
+    padding: 100px
 }
 
 .line{
