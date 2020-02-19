@@ -5,17 +5,53 @@
         <link id="blocklycss"  data-rtl="/blb/rtlblockly.css" rel="stylesheet" href="https://pxt.azureedge.net/blob/74e437a8d1544f7298fc1ef44e7b51e47941d0aa/blockly.css" />
         <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/foundation/5.5.3/css/foundation.min.css">
+        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/foundation/5.5.3/js/foundation.min.js"></script>
+        <script src="https://cdn.bootcss.com/foundation/5.5.3/js/vendor/modernizr.js"></script>
     </head>
     <body>
         <div class="container">
-            <h1>第一部分：開始遊戲</h1><p>Go to the <a target="_blank" rel="nofollow noopener" href="https://arcade.makecode.com/">MakeCode Arcade</a> editor and select <strong>New Project</strong> to begin creating a new game.</p>
-            <p>Once the editor loads, you will see a green <code class='loops'>on start</code> block already placed in the editor Workspace.</p>
-            <p>We want the game to start with a <em>Title Screen</em> to let the player know what game they are playing. To do that, we go to <code class="game">Game</code> in the Toolbox and under the <strong>Prompt</strong> category, drag a <code class="game">splash</code> block into the <code class="loops">on start</code> block. Give your game a title and put in as the text for the <code class="game">splash</code> block.</p>
-            <div style="position:relative;height:calc(300px + 5em);width:50%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://arcade.makecode.com/---codeembed#pub:_3yoiyW3PP29T" allowfullscreen="allowfullscreen" frameborder="0" sandbox="allow-scripts allow-same-origin"></iframe></div>
+            <ul class="tabs" data-tab>
+                <li class="tab-title active"><a href="#home">程式積木</a></li>
+                <li class="tab-title"><a href="#menu1">JavaScript</a></li>
+                <li class="tab-title"><a href="#menu2">Run</a></li>
+            </ul>
+            <div class="tabs-content">
+                <div class="content active" id="home">
+                    <div style="position:relative;height:calc(300px + 5em);width:100%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://arcade.makecode.com/---codeembed#pub:_cRP9dWcqHUfq" allowfullscreen="allowfullscreen" frameborder="0" sandbox="allow-scripts allow-same-origin"></iframe></div>
+                </div>
+                <div class="content" id="menu1">
+                    <code>game.splash("Cherry Pickr")</code>
+                </div>
+                <div class="content" id="menu2">
+                    <div style="position:relative;height:0;padding-bottom:117.6%;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:50%;height:50%;" src="https://arcade.makecode.com/---run?id=_cRP9dWcqHUfq" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0"></iframe></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
 
 <script>
     // console.log(screen.height);
+    $(document).ready(function() {
+        $(document).foundation();
+    })
 </script>
+
+<style>
+    .tabs-content > .content.active {
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1s;
+    }
+    
+    @-webkit-keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+    
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style>
