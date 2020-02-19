@@ -33,7 +33,9 @@ code{
     font-family: monospace,'Share Tech Mono';
     padding: .05rem .2rem;
     border-radius: .2rem;
-    color: white;
+    border: 1px #dfdfdf solid;
+    background-color: #f8f8f8;
+    color: #333;
     white-space: nowrap;
 }
 .loops{
