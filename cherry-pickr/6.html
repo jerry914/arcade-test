@@ -14,7 +14,11 @@
             <div class="tabs">
                 <div class="tab" onclick="showCode()">{ } JavaScript</div>
             </div>
-            <pre><code id="codeBlock" class="javascript">SCRIPT</code></pre>
+            <pre><code id="codeBlock" class="javascript">let cherry: Sprite = null
+game.onUpdateInterval(500, function () {
+    cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
+    cherry.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
+})</code></pre>
     </body>
 </html>
 
@@ -51,6 +55,7 @@
     #codeBlock{
         margin-top: 10px;
         display: none;
+        white-space: pre-wrap;
     }
     
 </style>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <link id="blocklycss"  data-rtl="/blb/rtlblockly.css" rel="stylesheet" href="https://pxt.azureedge.net/blob/74e437a8d1544f7298fc1ef44e7b51e47941d0aa/blockly.css" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="tabs">
+                <div class="tab" onclick="showCode()">{ } JavaScript</div>
+            </div>
+            <pre><code id="codeBlock" class="javascript">game.splash("Cherry Pickr")
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+        6 6 6 6 6 6 6 6 6 6 6 6 6 6 6 6
+    `
+    //% blockIdentity=images._tile
+    export const tile2 = img`
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+        3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    `
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+        5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+    `
+    //% blockIdentity=images._tile
+    export const tile4 = img`
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+        7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
+    `
+    //% blockIdentity=images._tile
+    export const tile5 = img`
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+        9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    `
+    //% blockIdentity=images._tile
+    export const tile6 = img`
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+        4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    `
+    //% blockIdentity=images._tile
+    export const tile7 = img`
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    `
+    //% blockIdentity=images._tile
+    export const tile8 = img`
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+        c c c c c c c c c c c c c c c c
+    `
+}
+tiles.setTilemap(tiles.createTilemap(
+    hex`0a0008000101010101010101010102020202020202020202030303030303030303030404040404040404040405050505050505050505060606060606060606060707070707070707070708080808080808080808`,
+    img`
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+    `,
+    [myTiles.tile0,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,myTiles.tile8],
+    TileScale.Sixteen
+))</code></pre>
+    </body>
+</html>
+
+<script>
+    // console.log(screen.height);
+    var show = false;
+    function showCode(){
+        if(!show){
+            document.getElementById("codeBlock").style = "display: block;";
+            show = true;
+        }
+        else{
+            document.getElementById("codeBlock").style = "display: none;";
+            show = false;
+        }
+    }
+</script>
+
+<style>
+    .tabs{
+        border-bottom: 1px rgb(116, 198, 96) solid;
+        height: 44px;
+    }
+    .tab{
+        padding: 10px;
+        font-size: 18px;
+        width: 130px;
+        text-align: center;
+        height: 45px;
+        line-height: 45px;
+        color: rgb(116, 198, 96);
+        cursor: pointer;
+    }
+    #codeBlock{
+        margin-top: 10px;
+        display: none;
+        white-space: pre-wrap;
+    }
+    
+</style>
