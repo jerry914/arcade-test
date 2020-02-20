@@ -13,7 +13,7 @@
                 <span class="tab" onclick="swiftTab()" id="tab2">模擬器</span>
             </div>
             <div class="tabs-content">
-                <div style="position:relative;height:calc(50em);width:100%;overflow:hidden;" id="editor"></div>
+                <div style="position:relative;height:calc(80vh);width:100%;overflow:hidden;" id="editor"></div>
                 <div id="simulator" style="height: 0;"></div>
             </div>
         </div>
@@ -41,13 +41,16 @@
     // console.log(screen.height);
     var locker = false;
     function swiftTab(){
+        
         document.getElementById("tab1").classList.toggle("active");
         document.getElementById("tab2").classList.toggle("active");
         var block1 = document.getElementById("editor");
+        var srlHeight = block1.offsetHeight+50;
+        
         if(locker == true){
             if(document.getElementById("tab2").classList.length>1){
                 document.getElementById("simulator").style = "display: flex;padding-bottom:117.6%;"
-                window.scrollTo(0, block1.offsetHeight);
+                window.scrollTo(0, srlHeight);
             }
             else{
                 document.getElementById("simulator").style = "display: none;"
@@ -56,7 +59,7 @@
         if(document.getElementById("tab2").classList.length>1 && locker == false){
             locker = true;
             document.getElementById("simulator").style = "display: flex;padding-bottom:117.6%;"
-            window.scrollTo(0, block1.offsetHeight);
+            window.scrollTo(0, srlHeight);
             document.getElementById("simulator").innerHTML = '    <iframe style="position:absolute;top:0;left:0;width:50%;height:50%;" src="https://arcade.makecode.com/---run?id=' 
             + getValue("pub") +
             '" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0"></iframe>';
