@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <link id="blocklycss"  data-rtl="/blb/rtlblockly.css" rel="stylesheet" href="https://pxt.azureedge.net/blob/74e437a8d1544f7298fc1ef44e7b51e47941d0aa/blockly.css" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="tabs">
+                <div class="tab" onclick="showCode()">{ } JavaScript</div>
+            </div>
+            <pre><code id="codeBlock" class="javascript">controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (mySprite.isHittingTile(CollisionDirection.Bottom)) {
+        mySprite.vy = -250
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+})
+let mySprite = sprites.create(img`
+    . . . . . . 5 . 5 . . . . . . .
+    . . . . . f 5 5 5 f f . . . . .
+    . . . . f 1 5 2 5 1 6 f . . . .
+    . . . f 1 6 6 6 6 6 1 6 f . . .
+    . . . f 6 6 f f f f 6 1 f . . .
+    . . . f 6 f f d d f f 6 f . . .
+    . . f 6 f d f d d f d f 6 f . .
+    . . f 6 f d 3 d d 3 d f 6 f . .
+    . . f 6 6 f d d d d f 6 6 f . .
+    . f 6 6 f 3 f f f f 3 f 6 6 f .
+    . . f f d 3 5 3 3 5 3 d f f . .
+    . . f d d f 3 5 5 3 f d d f . .
+    . . . f f 3 3 3 3 3 3 f f . . .
+    . . . f 3 3 5 3 3 5 3 3 f . . .
+    . . . f f f f f f f f f f . . .
+    . . . . . f f . . f f . . . . .
+`, SpriteKind.Player)
+mySprite.setPosition(20, 70)
+mySprite.ay = 500
+
+namespace myTiles {
+    //% blockIdentity=images._tile
+    export const tile0 = img`
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . .
+    `
+}
+tiles.setTilemap(tiles.createTilemap(
+    hex`0a0008000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000303030303030303030303030303030303030303`,
+    img`
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        . . . . . . . . . .
+        2 2 2 2 2 2 2 2 2 2
+        2 2 2 2 2 2 2 2 2 2
+    `,
+    [myTiles.tile0,sprites.builtin.brick,sprites.builtin.oceanDepths0,sprites.builtin.oceanDepths3],
+    TileScale.Sixteen
+))
+game.onUpdateInterval(1500, function () {
+    let projectile = sprites.createProjectileFromSide(img`
+        1 e e e e e e 1
+        e e e e e e e e
+        1 1 1 1 1 1 1 1
+        e e e e e e e e
+        e e e e e e e e
+        1 1 1 1 1 1 1 1
+        e e e e e e e e
+        1 e e e e e e 1
+    `, Math.randomRange(-100, -80), 0)
+    info.changeScoreBy(1)
+    tiles.placeOnTile(projectile, tiles.getTileLocation(9, 5))
+})</code></pre>
+    </body>
+</html>
+
+<script>
+    // console.log(screen.height);
+    var show = false;
+    function showCode(){
+        if(!show){
+            document.getElementById("codeBlock").style = "display: block;";
+            show = true;
+        }
+        else{
+            document.getElementById("codeBlock").style = "display: none;";
+            show = false;
+        }
+    }
+</script>
+
+<style>
+    .tabs{
+        border-bottom: 1px rgb(116, 198, 96) solid;
+        height: 44px;
+    }
+    .tab{
+        padding: 10px;
+        font-size: 18px;
+        width: 130px;
+        text-align: center;
+        height: 45px;
+        line-height: 45px;
+        color: rgb(116, 198, 96);
+        cursor: pointer;
+    }
+    #codeBlock{
+        margin-top: 10px;
+        display: none;
+        white-space: pre-wrap;
+    }
+    
+</style>
