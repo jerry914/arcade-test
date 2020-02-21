@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <link id="blocklycss"  data-rtl="/blb/rtlblockly.css" rel="stylesheet" href="https://pxt.azureedge.net/blob/74e437a8d1544f7298fc1ef44e7b51e47941d0aa/blockly.css" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="tabs">
+                <div class="tab" onclick="showCode()">{ } JavaScript</div>
+            </div>
+            <pre><code id="codeBlock" class="javascript">let direction = 0
+function getPos (sprite: Sprite, otherSprite: Sprite) {
+    if (sprite.x < otherSprite.x - 8 || sprite.x > otherSprite.x + 8) {
+        direction = 1
+    } else {
+        direction = 0
+    }
+}</code></pre>
+    </body>
+</html>
+
+<script>
+    // console.log(screen.height);
+    var show = false;
+    function showCode(){
+        if(!show){
+            document.getElementById("codeBlock").style = "display: block;";
+            show = true;
+        }
+        else{
+            document.getElementById("codeBlock").style = "display: none;";
+            show = false;
+        }
+    }
+</script>
+
+<style>
+    .tabs{
+        border-bottom: 1px rgb(116, 198, 96) solid;
+        height: 44px;
+    }
+    .tab{
+        padding: 10px;
+        font-size: 18px;
+        width: 130px;
+        text-align: center;
+        height: 45px;
+        line-height: 45px;
+        color: rgb(116, 198, 96);
+        cursor: pointer;
+    }
+    #codeBlock{
+        margin-top: 10px;
+        display: none;
+        white-space: pre-wrap;
+    }
+    
+</style>
