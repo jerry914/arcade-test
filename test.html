@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="zh-TW" >
     <head>
         <meta charset="UTF-8">
 
@@ -8,7 +8,7 @@
         <pre id="pre1">
             game.splash("Cherry Pickr")
         </pre>
-
+        <pre id="pre2" pub="_PKt1JbEzv4s2"></pre>
     </body>
 </html>
 
@@ -20,6 +20,7 @@ export interface RenderBlocksRequestMessage extends SimulatorMessage {
     code: string;
     options?: {
         package?: string;
+        packageId?: string;
         snippetMode?: boolean;
     }
 }
@@ -50,11 +51,12 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
         f.style.bottom = 0;
         f.style.width = "1px";
         f.style.height = "1px";
-        f.src = "https://arcade.makecode.com//--docs?render=1"
+        f.src = "https://arcade.makecode.com/--docs?render=1"
         document.body.appendChild(f);
     }
 
     function renderPre(pre) {
+    		if (!pre.id) pre.id = Math.random();
         console.log('render ' + pre.id)
         var f = document.getElementById("makecoderenderer");
         // check if iframe is added and ready (pendingPres is undefined)
@@ -66,7 +68,10 @@ var makeCodeRenderPre = makeCodeRenderPre || (function () {
             f.contentWindow.postMessage({
                 type: "renderblocks",
                 id: pre.id,
-                code: pre.innerText
+                code: pre.innerText,
+                options: {
+                	packageId: pre.getAttribute("pub")
+                }
             }, "https://arcade.makecode.com/");
         }
     }
