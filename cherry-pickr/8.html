@@ -304,7 +304,9 @@ game.onUpdateInterval(500, function () {
                 var qparts = url.split("?");
                 if (qparts.length == 0){return "";}
                 var query = qparts[1];
-                return query;
+                var vars = query.split("=");
+                var value = vars[1];
+                return value;
                 // id: _XTKRVwMbEWiW
             }
             if(getType() == "block"){
