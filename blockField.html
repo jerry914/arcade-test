@@ -8,37 +8,74 @@
     </head>
     <body>
         <div class="container">
+            <button onclick="runSimulator()" id="run">
+                <div class="tri"></div>
+                <div class="text">執行</div>
+                </button>
             <div class="tabs-content">
                 <div id="simulator" style="display: flex;padding-bottom:380px;"></div>
             </div>
         </div>
-        <script>
-            function getValue(varname)
-            {
-                var url = window.location.href;
-                var qparts = url.split("?");
-                if (qparts.length == 0){return "";}
-                var query = qparts[1];
-                var vars = query.split("=");
-                var value = vars[1];
-                return value;
-                // id: _XTKRVwMbEWiW
-            }
-            document.getElementById("simulator").innerHTML = '    <iframe style="position:absolute;top:0;left:0;width:300px;height:100%;" src="https://arcade.makecode.com/---run?id=' 
-            + getValue("pub") +
-            '" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0"></iframe>';
-
-        </script>
     </body>
 </html>
 
 <script>
     // console.log(screen.height);
+    function getValue(varname)
+    {
+        var url = window.location.href;
+        var qparts = url.split("?");
+        if (qparts.length == 0){return "";}
+        var query = qparts[1];
+        var vars = query.split("=");
+        var value = vars[1];
+        return value;
+        // id: _XTKRVwMbEWiW
+    }
+    function runSimulator(){
+        var btn = document.getElementById("run");
+        btn.style = "display:none;"
+        document.getElementById("simulator").innerHTML = '    <iframe style="position:absolute;top:0;left:0;width:300px;height:100%;" src="https://arcade.makecode.com/---run?id=' 
+            + getValue("pub") +
+            '" allowfullscreen="allowfullscreen" sandbox="allow-popups allow-forms allow-scripts allow-same-origin" frameborder="0"></iframe>';
+    }
 </script>
 
 <style>
     #simulator{
         position:relative;height:0;overflow:hidden;
+    }
+    button{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        border-radius: 50px;
+        color: white;
+        padding: 10px 27px;
+        font-family: 'Microsoft JhengHei', Helvetica, Arial, sans-serif;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 2px 2px;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    button:hover{
+        background-color: #fff;
+        color: #4CAF50;
+        border: 1px #4CAF50 solid;
+    }
+    .tri{
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border-style: solid;
+        border-width: 7.5px 0 7.5px 10px;
+        border-color: transparent transparent transparent white;
+    }
+
+    .text{
+        display: inline-block;
     }
     
 </style>
