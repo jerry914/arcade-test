@@ -107,11 +107,11 @@ game.onUpdateInterval(500, function () {
                 return query;
                 // id: _XTKRVwMbEWiW
             }
-            if(getType() == "JavaScript"){
-                hljs.initHighlightingOnLoad();
+            if(getType() == "block"){
+                renderSnippets();
             }
             else{
-                renderSnippets();
+                hljs.initHighlightingOnLoad();
             }
         </script>
     </body>
