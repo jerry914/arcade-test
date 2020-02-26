@@ -292,7 +292,7 @@ info.setScore(0)</code></pre>
             function getType(varname)
             {
                 var url = window.location.href;
-                var qparts = url.split("#");
+                var qparts = url.split("?");
                 if (qparts.length == 0){return "";}
                 var query = qparts[1];
                 return query;
@@ -303,7 +303,6 @@ info.setScore(0)</code></pre>
             }
             else{
                 renderSnippets();
-
             }
         </script>
     </body>

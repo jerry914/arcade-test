@@ -101,7 +101,7 @@ game.onUpdateInterval(500, function () {
             function getType(varname)
             {
                 var url = window.location.href;
-                var qparts = url.split("#");
+                var qparts = url.split("?");
                 if (qparts.length == 0){return "";}
                 var query = qparts[1];
                 return query;
@@ -112,7 +112,6 @@ game.onUpdateInterval(500, function () {
             }
             else{
                 renderSnippets();
-
             }
         </script>
     </body>

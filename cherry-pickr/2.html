@@ -285,7 +285,7 @@ tiles.setTilemap(tiles.createTilemap(
             function getType(varname)
             {
                 var url = window.location.href;
-                var qparts = url.split("#");
+                var qparts = url.split("?");
                 if (qparts.length == 0){return "";}
                 var query = qparts[1];
                 return query;
@@ -296,7 +296,6 @@ tiles.setTilemap(tiles.createTilemap(
             }
             else{
                 renderSnippets();
-
             }
         </script>
     </body>
