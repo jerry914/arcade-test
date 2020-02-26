@@ -106,18 +106,19 @@ forever(function () {
             function getType(varname)
             {
                 var url = window.location.href;
-                var qparts = url.split("#");
+                var qparts = url.split("?");
                 if (qparts.length == 0){return "";}
                 var query = qparts[1];
-                return query;
+                var vars = query.split("=");
+                var value = vars[1];
+                return value;
                 // id: _XTKRVwMbEWiW
             }
-            if(getType() == "JavaScript"){
-                hljs.initHighlightingOnLoad();
+            if(getType().indexOf("block")>=0){
+                renderSnippets();
             }
             else{
-                renderSnippets();
-
+                hljs.initHighlightingOnLoad();
             }
         </script>
     </body>
