@@ -1,0 +1,85 @@
+{
+    "question": {
+        "content": "[[☃ article-block 1]]",
+        "images": {},
+        "widgets": {
+            "article-block 1": {
+                "type": "article-block",
+                "graded": false,
+                "options": {
+                    "articleBlock": "CONTENTTITLE\n\n# SUBTITLE\nSECTION[1]\n[[☃ article-block 1~SECTIONLEN-2]]\n\n[[☃ explanation 1]]\n\n[[☃ image 1]]",
+                    "background": "#ddeeea",
+                    "blockTitle": "",
+                    "expandable": false,
+                    "expanded": false,
+                    "widgets": {
+                        ARTICLEBLOCK,
+                        "explanation 1": {
+                            "graded": false,
+                            "id": "explanation 1",
+                            "options": {
+                                "explanation": "教學課程由邱文盛老師、S4A教師社群、聯發科技教育基金會、均一教育平台(Junyi Academy)協力製作，採用[創用 CC 姓名標示-相同方式分享 4.0 國際授權條款釋出](https://creativecommons.org/licenses/by-sa/4.0/ \"\" \"_blank\")。課程網頁所顯示的 MediaTek, LinkKit, BlocklyDuino等圖標、文字與相關權利分屬個別組織或公司所有。\n\n聯發科LinkIt™ 7697物聯網應用開發板，可連接並控制各種外部感測器，並具備WiFi與藍芽功能可連結MediaTek Cloud Sandbox雲端平台，使用BlocklyDuino圖形化編輯器，拖拉組合程式積木，創作好玩、有趣又結合生活體驗的進階科技專題。\n",
+                                "hidePrompt": "- Acknowledgement",
+                                "showPrompt": "+ Acknowledgement",
+                                "widgets": {}
+                            },
+                            "type": "explanation",
+                            "version": {
+                                "major": 0,
+                                "minor": 0
+                            }
+                        },
+                        "image 1": {
+                            "graded": true,
+                            "id": "image 1",
+                            "options": {
+                                "aspectRatio": 0.37058823529411766,
+                                "backgroundImage": {
+                                    "height": 28,
+                                    "url": "https://ys-fang.github.io/Linkit7697Learning-Resources/img/home/10.gif",
+                                    "width": 75
+                                },
+                                "box": [
+                                    75,
+                                    28
+                                ],
+                                "labels": [],
+                                "maxImageSize": 435,
+                                "range": [
+                                    [
+                                        0,
+                                        10
+                                    ],
+                                    [
+                                        0,
+                                        10
+                                    ]
+                                ],
+                                "useBoxSize": true
+                            },
+                            "type": "image",
+                            "version": {
+                                "major": 0,
+                                "minor": 0
+                            }
+                        }
+                    }
+                },
+                "version": {
+                    "major": 0,
+                    "minor": 0
+                }
+            }
+        }
+    },
+    "answerArea": {
+        "type": "multiple",
+        "options": {},
+        "calculator": false
+    },
+    "itemDataVersion": {
+        "major": 0,
+        "minor": 1
+    },
+    "hints": []
+}

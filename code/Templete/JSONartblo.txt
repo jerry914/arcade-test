@@ -1,0 +1,18 @@
+"article-block ARTICLEIDX": {
+                            "id": "article-block ARTICLEIDX",
+                            "type": "article-block",
+                            "graded": false,
+                            "options": {
+                                "background": "#fee",
+                                "blockTitle": "TITLE",
+                                "articleBlock": "CONTENT",
+                                "widgets": {
+                                },
+                                "expandable": true,
+                                "expanded": false
+                            },
+                            "version": {
+                                "major": 0,
+                                "minor": 0
+                            }
+                        },

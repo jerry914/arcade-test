@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <link id="blocklycss"  data-rtl="/blb/rtlblockly.css" rel="stylesheet" href="https://pxt.azureedge.net/blob/74e437a8d1544f7298fc1ef44e7b51e47941d0aa/blockly.css" />
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    </head>
+    <body>
+        <pre><code id="codeBlock" class="javascript">SCRIPT</code></pre>
+        
+        <script>
+            //console.log(screen.height);
+
+            var makeCodeRenderPre = makeCodeRenderPre || (function () {
+                // pre waiting to be rendered
+                // when undefined, iframe is loaded and ready
+                var pendingPres = [];
+                function injectRenderer() {
+                    var f = document.getElementById("makecoderenderer");
+                    // check iframe already added to the DOM
+                    if (f) {
+                        return;
+                    }
+                    var f = document.createElement("iframe");
+                    f.id = "makecoderenderer";
+                    f.style.position = "absolute";
+                    f.style.left = 0;
+                    f.style.bottom = 0;
+                    f.style.width = "1px";
+                    f.style.height = "1px";
+                    f.src = "https://arcade.makecode.com/--docs?render=1"
+                    document.body.appendChild(f);
+            }
+
+            function renderPre(pre) {
+    		    if (!pre.id) pre.id = Math.random();
+                    console.log('render ' + pre.id)
+                    var f = document.getElementById("makecoderenderer");
+                // check if iframe is added and ready (pendingPres is undefined)
+                if (!f || !!pendingPres) {
+                    // queue up
+                    pendingPres.push(pre);
+                    injectRenderer();
+                } else {
+                    f.contentWindow.postMessage({
+                        type: "renderblocks",
+                        id: pre.id,
+                        code: pre.innerText,
+                        options: {
+                            packageId: pre.getAttribute("pub")
+                        }
+                    }, "https://arcade.makecode.com/");
+                }
+            }
+
+            // listen for messages
+            window.addEventListener("message", function (ev) {
+                var msg = ev.data;
+                if (msg.source != "makecode") return;
+
+                console.log(msg.type)
+                switch (msg.type) {
+                    case "renderready":
+                        // flush pending requests            				
+                        var pres = pendingPres;
+                        // set as undefined to notify that iframe is ready
+                        pendingPres = undefined;
+                        pres.forEach(function (pre) { renderPre(pre); })
+                        break;
+                    case "renderblocks":
+                        var svg = msg.svg; // this is an string containing SVG
+                        var id = msg.id; // this is the id you sent
+                        // replace text with svg
+                        var img = document.createElement("img");
+                        img.src = msg.uri;
+                        img.width = msg.width;
+                        img.height = msg.height;
+                        var code = document.getElementById(id);
+                        code.parentElement.insertBefore(img, code)
+                        code.parentElement.removeChild(code);
+                        break;
+                }
+            }, false);
+
+            return renderPre;
+        })();
+
+        function renderSnippets() {
+            // TODO ADD RENDER LOGIC HERE
+            let pres = document.getElementsByTagName("pre");
+            Array.prototype.forEach.call(pres, function (pre) {
+                makeCodeRenderPre(pre);
+            })
+        }
+            function getType(varname)
+            {
+                var url = window.location.href;
+                var qparts = url.split("?");
+                if (qparts.length == 0){return "";}
+                var query = qparts[1];
+                var vars = query.split("=");
+                var value = vars[1];
+                return value;
+                // id: _XTKRVwMbEWiW
+            }
+            if(getType().indexOf("block")>=0){
+                renderSnippets();
+            }
+            else{
+                hljs.initHighlightingOnLoad();
+            }
+        </script>
+    </body>
+</html>
+
+
+<style>
+    #codeBlock{
+        margin-top: 10px;
+        white-space: pre-wrap;
+    }
+    code{
+        font-family: monospace,'Share Tech Mono';
+        padding: .05rem .2rem;
+        border-radius: .2rem;
+        border: 1px #dfdfdf solid;
+        background-color: #f8f8f8;
+        color: #333;
+        white-space: nowrap;
+    }
+    html{
+    background-color: #fff;
+    }
+</style>

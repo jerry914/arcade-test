@@ -1,0 +1,32 @@
+"image IMGBLOCKINDEX": {
+                                    "graded": true,
+                                    "id": "image IMGBLOCKINDEX",
+                                    "options": {
+                                        "aspectRatio": 0.3352941176470588,
+                                        "backgroundImage": {
+                                            "url": "https://ys-fang.github.io/Linkit7697Learning-Resources/img/ROUTE/IMGIDX.gif",
+                                            "width": IMAGEWIDTH,
+                                            "height": IMAGEHEIGHT
+                                        },
+                                        "box": [IMAGEWIDTH,
+                                            IMAGEHEIGHT],
+                                        "labels": [],
+                                        "maxImageSize": IMAGEWIDTH,
+                                        "range": [
+                                            [
+                                                0,
+                                                10
+                                            ],
+                                            [
+                                                0,
+                                                10
+                                            ]
+                                        ],
+                                        "useBoxSize": false
+                                    },
+                                    "type": "image",
+                                    "version": {
+                                        "major": 0,
+                                        "minor": 0
+                                    }
+                                },
