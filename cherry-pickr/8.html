@@ -8,7 +8,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     </head>
     <body>
-        <pre><code id="codeBlock" class="javascript">let cherry: Sprite = null
+        <pre id="pre1"><code id="codeBlock" class="javascript">let cherry: Sprite = null
 let mySprite: Sprite = null
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
@@ -213,7 +213,6 @@ game.onUpdateInterval(500, function () {
     cherry = sprites.create(sprites.food.smallCherries, SpriteKind.Food)
     cherry.setPosition(Math.randomRange(0, 160), Math.randomRange(0, 120))
 })</code></pre>
-        
         <script>
             console.log(screen.height);
 
