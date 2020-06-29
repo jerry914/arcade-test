@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>video player</title>
+    <!-- <script src="//cdn.jsdelivr.net/npm/afterglowplayer@1.x"></script> -->
+  </head>
+
+  <!-- <body onresize="resizeWindow()"> -->
+  <body>
+  	<div class="videowrapper" id="link"></div>
+    <script>
+        var value = {};
+        function getValue(varname)
+        {
+          var url = window.location.href;
+          var qparts = url.split("?");
+          if (qparts.length == 0){return "";}
+          var querys = qparts[1];
+          var query = querys.split("&");
+          
+          for (var i=0;i<query.length;i++){
+            if(query[i].indexOf("v")>=0){
+              value.src = query[i].split("=")[1];
+            }
+            else if(query[i].indexOf("title")>=0){
+              value.title = query[i].split("=")[1];
+            }
+          }
+          return value;
+          
+        }
+        
+        var w = window.innerWidth-10;
+        var h = window.innerHeight-20;
+        document.getElementById("link").innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+getValue("src").src+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+        // document.getElementById("link").innerHTML = '<video id="video1" width="'+w+'" height="'+h+'" controls><source src="'+getValue("src").src+'" type="video/mp4"></video>';
+    </script>
+
+  </body>
+</html>
+
+<style>
+  video{
+    border-radius: 8px;
+  }
+  button{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 0;
+    background-color: #5cb85c;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+    z-index: 1;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+  }
+  .tri{
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 30px);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 0 50px 80px;
+    border-color: transparent transparent transparent #ffffff;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .mask{
+    position: absolute;
+    width:  calc(100% - 10px);
+    height:  calc(100% - 20px);
+    background-image: linear-gradient(180deg, #0003 0%, #000f 100%);
+    border-radius: 8px;
+  }
+  .btn{
+    display: block;
+  }
+</style>
+
+<script>
+  function resizeWindow(){
+    nw = window.innerWidth-10;
+    nh = window.innerHeight-20;
+
+    document.getElementById("link").innerHTML = '<video id="video1" width="'+nw+'" height="'+nh+'" controls><source src="'+getValue("src").src+'" type="video/mp4"></video>';
+  }
+  var myVideo = document.getElementById("video1"); 
+
+  function playPause() { 
+    if (myVideo.paused) {
+      myVideo.play();
+      var btn = document.getElementsByClassName("btn");
+      for (var i = 0; i < btn.length; i++) {
+        btn[i].style = "display: none";
+      }
+      
+      console.log(btn);
+    }
+    else 
+      myVideo.pause(); 
+  } 
+  function openFullscreen() {
+    if (myVideo.requestFullscreen) {
+      myVideo.requestFullscreen();
+    } else if (myVideo.mozRequestFullScreen) { /* Firefox */
+      myVideo.mozRequestFullScreen();
+    } else if (myVideo.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      myVideo.webkitRequestFullscreen();
+    } else if (myVideo.msRequestFullscreen) { /* IE/Edge */
+      myVideo.msRequestFullscreen();
+    }
+  }
+</script>
